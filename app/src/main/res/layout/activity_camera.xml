@@ -40,7 +40,7 @@
             android:id="@+id/button_choose_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose Filter"
+            android:text="选择滤镜"
             tools:ignore="HardcodedText" />
 
         <ImageButton

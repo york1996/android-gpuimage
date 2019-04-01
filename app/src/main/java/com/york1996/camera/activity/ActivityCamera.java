@@ -1,20 +1,4 @@
-/*
- * Copyright (C) 2018 CyberAgent, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package jp.co.cyberagent.android.gpuimage.sample.activity;
+package com.york1996.camera.activity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -31,6 +15,10 @@ import android.view.View.OnClickListener;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
+import com.york1996.camera.GPUImageFilterTools;
+import com.york1996.camera.R;
+import com.york1996.camera.utils.CameraHelper;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -42,12 +30,6 @@ import java.util.Locale;
 import androidx.appcompat.app.AppCompatActivity;
 import jp.co.cyberagent.android.gpuimage.GPUImage;
 import jp.co.cyberagent.android.gpuimage.GPUImageFilter;
-import jp.co.cyberagent.android.gpuimage.sample.GPUImageFilterTools;
-import jp.co.cyberagent.android.gpuimage.sample.GPUImageFilterTools.FilterAdjuster;
-import jp.co.cyberagent.android.gpuimage.sample.GPUImageFilterTools.OnGpuImageFilterChosenListener;
-import jp.co.cyberagent.android.gpuimage.sample.R;
-import jp.co.cyberagent.android.gpuimage.sample.utils.CameraHelper;
-import jp.co.cyberagent.android.gpuimage.sample.utils.CameraHelper.CameraInfo2;
 
 public class ActivityCamera extends AppCompatActivity implements OnSeekBarChangeListener, OnClickListener {
 
@@ -55,7 +37,7 @@ public class ActivityCamera extends AppCompatActivity implements OnSeekBarChange
     private CameraHelper mCameraHelper;
     private CameraLoader mCamera;
     private GPUImageFilter mFilter;
-    private FilterAdjuster mFilterAdjuster;
+    private GPUImageFilterTools.FilterAdjuster mFilterAdjuster;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -94,7 +76,7 @@ public class ActivityCamera extends AppCompatActivity implements OnSeekBarChange
     public void onClick(final View v) {
         switch (v.getId()) {
             case R.id.button_choose_filter:
-                GPUImageFilterTools.showDialog(this, new OnGpuImageFilterChosenListener() {
+                GPUImageFilterTools.showDialog(this, new GPUImageFilterTools.OnGpuImageFilterChosenListener() {
 
                     @Override
                     public void onGpuImageFilterChosenListener(final GPUImageFilter filter) {
@@ -218,7 +200,7 @@ public class ActivityCamera extends AppCompatActivity implements OnSeekBarChange
                 || (filter != null && !mFilter.getClass().equals(filter.getClass()))) {
             mFilter = filter;
             mGPUImage.setFilter(mFilter);
-            mFilterAdjuster = new FilterAdjuster(mFilter);
+            mFilterAdjuster = new GPUImageFilterTools.FilterAdjuster(mFilter);
         }
     }
 
@@ -270,7 +252,7 @@ public class ActivityCamera extends AppCompatActivity implements OnSeekBarChange
 
             int orientation = mCameraHelper.getCameraDisplayOrientation(
                     ActivityCamera.this, mCurrentCameraId);
-            CameraInfo2 cameraInfo = new CameraInfo2();
+            CameraHelper.CameraInfo2 cameraInfo = new CameraHelper.CameraInfo2();
             mCameraHelper.getCameraInfo(mCurrentCameraId, cameraInfo);
             boolean flipHorizontal = cameraInfo.facing == CameraInfo.CAMERA_FACING_FRONT;
             mGPUImage.setUpCamera(mCameraInstance, orientation, flipHorizontal, false);

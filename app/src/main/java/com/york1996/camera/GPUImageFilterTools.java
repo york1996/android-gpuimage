@@ -1,20 +1,4 @@
-/*
- * Copyright (C) 2018 CyberAgent, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package jp.co.cyberagent.android.gpuimage.sample;
+package com.york1996.camera;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -107,54 +91,54 @@ public class GPUImageFilterTools {
     public static void showDialog(final Context context,
                                   final OnGpuImageFilterChosenListener listener) {
         final FilterList filters = new FilterList();
-        filters.addFilter("Contrast", FilterType.CONTRAST);
-        filters.addFilter("Invert", FilterType.INVERT);
-        filters.addFilter("Pixelation", FilterType.PIXELATION);
-        filters.addFilter("Hue", FilterType.HUE);
-        filters.addFilter("Gamma", FilterType.GAMMA);
-        filters.addFilter("Brightness", FilterType.BRIGHTNESS);
-        filters.addFilter("Sepia", FilterType.SEPIA);
-        filters.addFilter("Grayscale", FilterType.GRAYSCALE);
-        filters.addFilter("Sharpness", FilterType.SHARPEN);
-        filters.addFilter("Sobel Edge Detection", FilterType.SOBEL_EDGE_DETECTION);
-        filters.addFilter("3x3 Convolution", FilterType.THREE_X_THREE_CONVOLUTION);
-        filters.addFilter("Emboss", FilterType.EMBOSS);
-        filters.addFilter("Posterize", FilterType.POSTERIZE);
+        filters.addFilter("对比度", FilterType.CONTRAST);
+        filters.addFilter("反相", FilterType.INVERT);
+        filters.addFilter("像素化", FilterType.PIXELATION);
+        filters.addFilter("顺化", FilterType.HUE);
+        filters.addFilter("GAMMA", FilterType.GAMMA);
+        filters.addFilter("亮度", FilterType.BRIGHTNESS);
+        filters.addFilter("褐色", FilterType.SEPIA);
+        filters.addFilter("灰度", FilterType.GRAYSCALE);
+        filters.addFilter("锐度", FilterType.SHARPEN);
+        filters.addFilter("Sobel边缘检测", FilterType.SOBEL_EDGE_DETECTION);
+        filters.addFilter("3x3 卷积", FilterType.THREE_X_THREE_CONVOLUTION);
+        filters.addFilter("浮雕", FilterType.EMBOSS);
+        filters.addFilter("多色调分色印", FilterType.POSTERIZE);
         filters.addFilter("Grouped filters", FilterType.FILTER_GROUP);
-        filters.addFilter("Saturation", FilterType.SATURATION);
-        filters.addFilter("Exposure", FilterType.EXPOSURE);
-        filters.addFilter("Highlight Shadow", FilterType.HIGHLIGHT_SHADOW);
-        filters.addFilter("Monochrome", FilterType.MONOCHROME);
-        filters.addFilter("Opacity", FilterType.OPACITY);
+        filters.addFilter("饱和度", FilterType.SATURATION);
+        filters.addFilter("曝光", FilterType.EXPOSURE);
+        filters.addFilter("高光", FilterType.HIGHLIGHT_SHADOW);
+        filters.addFilter("单色", FilterType.MONOCHROME);
+        filters.addFilter("模糊", FilterType.OPACITY);
         filters.addFilter("RGB", FilterType.RGB);
-        filters.addFilter("White Balance", FilterType.WHITE_BALANCE);
-        filters.addFilter("Vignette", FilterType.VIGNETTE);
-        filters.addFilter("ToneCurve", FilterType.TONE_CURVE);
+        filters.addFilter("白平衡", FilterType.WHITE_BALANCE);
+        filters.addFilter("贴纸", FilterType.VIGNETTE);
+        filters.addFilter("曲线", FilterType.TONE_CURVE);
 
-        filters.addFilter("Blend (Difference)", FilterType.BLEND_DIFFERENCE);
-        filters.addFilter("Blend (Source Over)", FilterType.BLEND_SOURCE_OVER);
-        filters.addFilter("Blend (Color Burn)", FilterType.BLEND_COLOR_BURN);
-        filters.addFilter("Blend (Color Dodge)", FilterType.BLEND_COLOR_DODGE);
-        filters.addFilter("Blend (Darken)", FilterType.BLEND_DARKEN);
-        filters.addFilter("Blend (Dissolve)", FilterType.BLEND_DISSOLVE);
-        filters.addFilter("Blend (Exclusion)", FilterType.BLEND_EXCLUSION);
-        filters.addFilter("Blend (Hard Light)", FilterType.BLEND_HARD_LIGHT);
-        filters.addFilter("Blend (Lighten)", FilterType.BLEND_LIGHTEN);
-        filters.addFilter("Blend (Add)", FilterType.BLEND_ADD);
-        filters.addFilter("Blend (Divide)", FilterType.BLEND_DIVIDE);
-        filters.addFilter("Blend (Multiply)", FilterType.BLEND_MULTIPLY);
-        filters.addFilter("Blend (Overlay)", FilterType.BLEND_OVERLAY);
-        filters.addFilter("Blend (Screen)", FilterType.BLEND_SCREEN);
-        filters.addFilter("Blend (Alpha)", FilterType.BLEND_ALPHA);
-        filters.addFilter("Blend (Color)", FilterType.BLEND_COLOR);
-        filters.addFilter("Blend (Hue)", FilterType.BLEND_HUE);
-        filters.addFilter("Blend (Saturation)", FilterType.BLEND_SATURATION);
-        filters.addFilter("Blend (Luminosity)", FilterType.BLEND_LUMINOSITY);
-        filters.addFilter("Blend (Linear Burn)", FilterType.BLEND_LINEAR_BURN);
-        filters.addFilter("Blend (Soft Light)", FilterType.BLEND_SOFT_LIGHT);
-        filters.addFilter("Blend (Subtract)", FilterType.BLEND_SUBTRACT);
-        filters.addFilter("Blend (Chroma Key)", FilterType.BLEND_CHROMA_KEY);
-        filters.addFilter("Blend (Normal)", FilterType.BLEND_NORMAL);
+        filters.addFilter("混合 (Difference)", FilterType.BLEND_DIFFERENCE);
+        filters.addFilter("混合 (Source Over)", FilterType.BLEND_SOURCE_OVER);
+        filters.addFilter("混合 (Color Burn)", FilterType.BLEND_COLOR_BURN);
+        filters.addFilter("混合 (Color Dodge)", FilterType.BLEND_COLOR_DODGE);
+        filters.addFilter("混合 (Darken)", FilterType.BLEND_DARKEN);
+        filters.addFilter("混合 (Dissolve)", FilterType.BLEND_DISSOLVE);
+        filters.addFilter("混合 (Exclusion)", FilterType.BLEND_EXCLUSION);
+        filters.addFilter("混合 (Hard Light)", FilterType.BLEND_HARD_LIGHT);
+        filters.addFilter("混合 (Lighten)", FilterType.BLEND_LIGHTEN);
+        filters.addFilter("混合 (Add)", FilterType.BLEND_ADD);
+        filters.addFilter("混合 (Divide)", FilterType.BLEND_DIVIDE);
+        filters.addFilter("混合 (Multiply)", FilterType.BLEND_MULTIPLY);
+        filters.addFilter("混合 (Overlay)", FilterType.BLEND_OVERLAY);
+        filters.addFilter("混合 (Screen)", FilterType.BLEND_SCREEN);
+        filters.addFilter("混合 (Alpha)", FilterType.BLEND_ALPHA);
+        filters.addFilter("混合 (Color)", FilterType.BLEND_COLOR);
+        filters.addFilter("混合 (Hue)", FilterType.BLEND_HUE);
+        filters.addFilter("混合 (Saturation)", FilterType.BLEND_SATURATION);
+        filters.addFilter("混合 (Luminosity)", FilterType.BLEND_LUMINOSITY);
+        filters.addFilter("混合 (Linear Burn)", FilterType.BLEND_LINEAR_BURN);
+        filters.addFilter("混合 (Soft Light)", FilterType.BLEND_SOFT_LIGHT);
+        filters.addFilter("混合 (Subtract)", FilterType.BLEND_SUBTRACT);
+        filters.addFilter("混合 (Chroma Key)", FilterType.BLEND_CHROMA_KEY);
+        filters.addFilter("混合 (Normal)", FilterType.BLEND_NORMAL);
 
         filters.addFilter("Lookup (Amatorka)", FilterType.LOOKUP_AMATORKA);
         filters.addFilter("Gaussian Blur", FilterType.GAUSSIAN_BLUR);
@@ -755,6 +739,5 @@ public class GPUImageFilterTools {
                 getFilter().setTransform3D(transform);
             }
         }
-
     }
 }
